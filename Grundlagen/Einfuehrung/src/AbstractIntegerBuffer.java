@@ -16,9 +16,12 @@ public abstract class AbstractIntegerBuffer implements IntegerBuffer{
     }
 
     //Speichert das neue Objekt auf den Stack.
-    public void push(Integer i)throws IllegalArgumentException{
+    public void push(Integer i)throws IllegalArgumentException,StackOverFlowExceptions{
         if(i < 0) {
             throw new IllegalArgumentException();
+        }
+        else if(size > capacity()){
+            throw new StackOverFlowExceptions();
         }
         this.array[size++] = i;
     }
