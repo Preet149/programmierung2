@@ -20,7 +20,7 @@ public abstract class AbstractIntegerBuffer implements IntegerBuffer{
         if(i < 0) {
             throw new IllegalArgumentException();
         }
-        else if(size > capacity()){
+        else if(size >= capacity()){
             throw new StackOverFlowExceptions();
         }
         this.array[size++] = i;
