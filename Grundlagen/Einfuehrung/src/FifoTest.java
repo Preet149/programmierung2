@@ -45,4 +45,18 @@ import static org.junit.jupiter.api.Assertions.*;
         }
         assertThrows(StackOverFlowExceptions.class,()->f1.push(2),"Oops something is wrong!!");
     }
+
+    @Test
+    void testmove() throws StackOverFlowExceptions {
+        //Shifting elements from f1 to f2.
+        Helper.move(f1,f2);
+
+        //Check the sequence of the elements using the push methods.
+        for(int i = 0;i < 5;i++){
+            assertEquals(i,f2.pop(),"Oops something went wrong!!");
+        }
+
+
+
+    }
 }
