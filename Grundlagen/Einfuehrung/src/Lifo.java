@@ -5,7 +5,13 @@
 
 public class Lifo extends AbstractIntegerBuffer{
 
-    public Lifo(int s) {this.array = new Integer[s];}
+    public Lifo(){
+        super();
+    }
+
+    public Lifo(int s) {
+        this.array = new Integer[s];
+    }
 
     //Gibt das letzte Objekt zurueck.
     public Integer pop()throws ArrayIndexOutOfBoundsException {

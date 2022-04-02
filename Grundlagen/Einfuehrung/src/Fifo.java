@@ -3,7 +3,14 @@
  */
 
 public class Fifo extends AbstractIntegerBuffer{
-    public Fifo(int s) {this.array = new Integer[s];}
+
+    public Fifo(){
+        super();
+    }
+
+    public Fifo(int s) {
+        this.array = new Integer[s];
+    }
 
     //Gibt das aller erstes Objekt zurueck.
     public Integer pop()throws ArrayIndexOutOfBoundsException {
