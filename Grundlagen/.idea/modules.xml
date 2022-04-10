@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Einfuehrung/Einfuehrung.iml" filepath="$PROJECT_DIR$/Einfuehrung/Einfuehrung.iml" />
       <module fileurl="file://$PROJECT_DIR$/Generics/Generics.iml" filepath="$PROJECT_DIR$/Generics/Generics.iml" />
       <module fileurl="file://$PROJECT_DIR$/Themen.iml" filepath="$PROJECT_DIR$/Themen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Verkettete Liste/Verkettete Liste.iml" filepath="$PROJECT_DIR$/Verkettete Liste/Verkettete Liste.iml" />
     </modules>
   </component>
 </project>
