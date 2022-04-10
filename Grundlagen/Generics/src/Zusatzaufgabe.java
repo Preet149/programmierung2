@@ -18,4 +18,21 @@ public class Zusatzaufgabe {
         }
         return sum;
     }
+
+    public static int differencof2sum(int range)throws IllegalArgumentException{
+        if(range < 0){
+            throw new IllegalArgumentException("Range should not be a negative number!!");
+        }
+        int sum1 = 0;
+        int sum2 = 0;
+        int difference = 0;
+        for(int i = 0;i < range ;i++){
+            sum1 += Math.pow((i+1),2);
+            sum2 += i+1;
+        }
+        sum2 = (int)Math.pow(sum2,2);
+        difference = sum2 - sum1;
+
+        return difference;
+    }
 }
