@@ -12,6 +12,11 @@ import static org.junit.jupiter.api.Assertions.*;
     }
 
     @Test
+    void testdifference(){
+        assertEquals(2640,Zusatzaufgabe.differencof2sum(10),"The method returns the wrong difference!!");
+    }
+
+    @Test
     void testExceptionThrown(){
         assertThrows(IllegalArgumentException.class,()->Zusatzaufgabe.sum(-1),"Oops the illegalArgumentException was not thrown!");
     }
