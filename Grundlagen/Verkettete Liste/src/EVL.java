@@ -42,12 +42,14 @@ public class EVL<T>{
         if(first == null){
             first = newelem;
         }
-        Listenelement helper = first;
-        while(helper.next != null){//Suche das letzte Element.
-            helper = helper.next;
+        else {
+            Listenelement helper = first;
+            while (helper.next != null) {//Suche das letzte Element.
+                helper = helper.next;
+            }
+            helper.next = newelem;
+            this.size++;
         }
-        helper.next = newelem;
-        this.size++;
     }
 
     //Löscht und liefert das Element.
