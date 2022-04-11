@@ -34,9 +34,20 @@ import static org.junit.jupiter.api.Assertions.*;
         assertEquals(9,listinteger.getLast(),"The last element is wrong!!");
     }
 
-    @org.junit.jupiter.api.Test
-    void addLast() {
-    }
+    /*@org.junit.jupiter.api.Test
+    void removeLast() {
+        //The list is empty.
+        assertThrows(NullPointerException.class,()->listinteger.getFirst(),"The List is empty!!");
+
+        //Adding some elements into the list.
+        for(int i = 0;i < 10;i++){
+            listinteger.addLast(i);
+        }
+
+        for(int i = 9;i >-1;i--){
+            assertEquals(i,listinteger.removeLast(),"The returned element is wrong!!");
+        }
+    }*/
 
     @org.junit.jupiter.api.Test
     void contains() {

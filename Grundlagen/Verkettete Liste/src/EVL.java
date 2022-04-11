@@ -51,15 +51,17 @@ public class EVL<T>{
 
     //Löscht und liefert das Element.
     public T removeLast()throws NullPointerException{
+        int index = 0;
         if(first == null){
             throw new NullPointerException();
         }
         Listenelement helper = first;
-        while(helper.next != null){//Suche das letzte Element.
+        while(index != this.size - 2){//Suche das vorletzte Element.
             helper = helper.next;
         }
         T value = helper.data; //Last element found.
-        helper = null;
+        last = helper;
+        helper.next = null;
         this.size--;
         return value;
     }
