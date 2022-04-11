@@ -2,6 +2,7 @@ import java.util.List;
 
 public class EVL<T>{
     Listenelement first = null;   //Zeige auf das erste Element.
+    Listenelement last = null;    //Zeige auf das letzte Element.
     private int size = 0;
 
     //Innere Klasse
@@ -27,28 +28,24 @@ public class EVL<T>{
         if(first == null){
             throw new NullPointerException();
         }
-
-        Listenelement helper = first;
-        while(helper.next != null){//Suche das letzte Element.
-            helper = helper.next;
-        }
-        return helper.data;
+        return last.data;
     }
 
     //Fuegt das Element e am Ende der Liste hinzu.
     public void addLast(T e){
+        this.size++;
         Listenelement newelem = new Listenelement(e);
-
         if(first == null){
             first = newelem;
+            last = newelem;
         }
         else {
             Listenelement helper = first;
-            while (helper.next != null) {//Suche das letzte Element.
+            while(helper.next != null){
                 helper = helper.next;
             }
             helper.next = newelem;
-            this.size++;
+            last = newelem;
         }
     }
 
@@ -73,7 +70,7 @@ public class EVL<T>{
             throw new NullPointerException();
         }
         Listenelement helper = first;
-        while(helper.data == e){
+        while(helper.data != e){
             if(helper.next == null){
                 return false;
             }
