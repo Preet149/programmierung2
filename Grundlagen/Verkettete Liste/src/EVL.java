@@ -93,4 +93,12 @@ public class EVL<T>{
         return this.size;
     }
 
+    /*public void zip(EVL<T> others){    Aufgabe 4
+        if(this.size == 0){
+            for(Integer i = 0;i < others.size;i++){
+                this.addLast();
+            }
+        }
+    }*/
+
 }
