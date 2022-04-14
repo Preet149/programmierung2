@@ -1,7 +1,7 @@
 public class Test implements TestIF {
     @Override
     public int sum(int a, int b) {
-        return 0;
+        return a + b;
     }
 
     @Override
