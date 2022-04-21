@@ -29,10 +29,32 @@ import static org.junit.jupiter.api.Assertions.*;
         //Die Liste ist leer.
         assertEquals(0,list.size(),"The size of the list is not zero!!");
 
+        list.add(2);
+        list.add(4);
+        list.add(5);
+        list.add(7);
+        assertEquals(4,list.size(),"The size of the list is not 2!!");
     }
 
     @Test
-    void add() {
+    void test_output_sequence() {
+        for(int i = 0; i < 10; i++){
+            list.add(i);
+        }
+        assertEquals(10,list.size(),"The size of the list is not ten!!");
+        assertEquals(0,list.remove(),"The correct number was not returned!!");
+        assertEquals(1,list.remove(),"The correct number was not returned!!");
+        assertEquals(2,list.remove(),"The correct number was not returned!!");
+        assertEquals(3,list.remove(),"The correct number was not returned!!");
+        assertEquals(4,list.remove(),"The correct number was not returned!!");
+        assertEquals(5,list.remove(),"The correct number was not returned!!");
+        assertEquals(6,list.remove(),"The correct number was not returned!!");
+        assertEquals(7,list.remove(),"The correct number was not returned!!");
+
+        for(int i = 0; i < 10; i++){
+            //assertEquals(i,list.remove(),"The correct number was not returned!!");
+        }
+
     }
 
     @Test

@@ -46,11 +46,14 @@ public class RVL<T> {
     }
 
     public T remove()throws NullPointerException{
+        this.size--;
         if(entry == null){
             throw new NullPointerException("The list has not been created!!");
         }
         T value = entry.data;
         entry = entry.next;
+        entry.next.prev = entry.prev;
+        entry.prev = entry.next;
         return value;
     }
 
