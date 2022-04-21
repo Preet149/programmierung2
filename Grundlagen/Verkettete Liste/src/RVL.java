@@ -26,17 +26,22 @@ public class RVL<T> {
     }
 
     //Fuegt das Element in der Liste hinzu.
-    public void add(T e){// ?
+    public void add(T e){
+        this.size++;
+        Listenelement newelem = new Listenelement(e);
         if(entry == null){
-            entry = new Listenelement(e);
+            entry = newelem;
         }
         else if(this.size == 1){
-            entry.next = entry.prev = entry;
+            entry.prev = newelem;
+            newelem = newelem.prev = entry;
+            entry.next = newelem;
         }
-        else{
-            Listenelement newelem = new Listenelement(e);
-            entry.next = entry.prev = newelem;
-            newelem.next = newelem.prev = entry;
+        else{//size>1
+            entry.prev = newelem;
+            newelem.next = entry;
+            newelem.prev = entry.prev;
+            entry.prev = newelem;
         }
     }
 
