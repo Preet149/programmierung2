@@ -45,19 +45,28 @@ public class RVL<T> {
         }
     }
 
-    public T remove(){
+    public T remove()throws NullPointerException{
+        if(entry == null){
+            throw new NullPointerException("The list has not been created!!");
+        }
         T value = entry.data;
         entry = entry.next;
         return value;
     }
 
     //Liefert den Inhalt des aktuellen Listenelements.
-    public T element(){
+    public T element()throws NullPointerException{
+        if(entry == null){
+            throw new NullPointerException("The list has not been created!!");
+        }
         return entry.data;
     }
 
     //Verschiebt entry um s Schritte nach vorne.
-    public void next(int s){
+    public void next(int s)throws NullPointerException{
+        if(entry == null){
+            throw new NullPointerException("The list has not been created!!");
+        }
         int index = 0;
         Listenelement helper = entry;
         while (index != s){
@@ -67,7 +76,10 @@ public class RVL<T> {
     }
 
     //Verschiebt entry um s Schritte nach hinten.
-    public void prev(int s){
+    public void prev(int s)throws NullPointerException{
+        if(entry == null){
+            throw new NullPointerException("The list has not been created!!");
+        }
         int index = 0;
         Listenelement helper = entry;
         while (index != s){
