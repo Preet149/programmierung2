@@ -40,8 +40,10 @@ public class RVL<T> {
         }
     }
 
-    public T remove(){//?
-        return null;
+    public T remove(){
+        T value = entry.data;
+        entry = entry.next;
+        return value;
     }
 
     //Liefert den Inhalt des aktuellen Listenelements.
