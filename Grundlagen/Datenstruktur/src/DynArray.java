@@ -38,7 +38,8 @@ public class DynArray<T>{
 
     //Verdoppelt die Speichergroesse.
     public void increase(){
-        T[]tmp = (T[]) new Object[this.capacity * 2];
+        this.capacity *= 2;
+        T[]tmp = (T[]) new Object[this.capacity];
 
         //Elemente auf den neuen Array kopieren.
         for(int i = 0;i < this.size;i++){
@@ -49,7 +50,8 @@ public class DynArray<T>{
 
     //Halbiert die Speichergroesse.
     public void decrease(){
-        T[]tmp = (T[]) new Object[this.capacity/2];
+        this.capacity /= 2;
+        T[]tmp = (T[]) new Object[this.capacity];
 
         for(int i = 0;i < size;i++){
             tmp[i] = data[i];
@@ -72,7 +74,7 @@ public class DynArray<T>{
 
     //Fuegt das Element e am Ende des Speichers hinzu.
     public void addLast(T e){
-        if(size == capacity){
+        if(size == capacity){//2 2
             increase();
         }
         data[size++] = e;
