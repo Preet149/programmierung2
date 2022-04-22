@@ -7,8 +7,8 @@ public class DynArray<T>{
     private T[]data;
     private int size = 0;       //Anzahl der belegten Plaetze.
 
-    public DynArray(int capacity){
-        data = (T[]) new Object[capacity];
+    public DynArray(){
+        data = (T[]) new Object[this.capacity];
     }
 
     //Liefert anzahl der belegten Plaetze.
