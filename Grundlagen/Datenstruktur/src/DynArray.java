@@ -73,7 +73,7 @@ public class DynArray<T>{
     //Fuegt das Element e am Ende des Speichers hinzu.
     public void addLast(T e){
         if(size == capacity){
-            capacity_verdoppeln();
+            increase();
         }
         data[size++] = e;
     }
