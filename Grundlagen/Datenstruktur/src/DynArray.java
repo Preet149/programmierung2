@@ -1,3 +1,7 @@
+import jdk.jshell.execution.JdiExecutionControl;
+
+import java.util.NoSuchElementException;
+
 public class DynArray<T>{
     private int capacity = 1;   //Speichergroesse
     private T[]data;
@@ -32,6 +36,78 @@ public class DynArray<T>{
         return returnvalue;
     }
 
+    //Verdoppelt die Speichergroesse.
+    public void increase(){
+        T[]tmp = (T[]) new Object[this.capacity * 2];
+
+        //Elemente auf den neuen Array kopieren.
+        for(int i = 0;i < this.size;i++){
+            tmp[i] = data[i];
+        }
+        data = tmp;
+    }
+
+    //Halbiert die Speichergroesse.
+    public void decrease(){
+        T[]tmp = (T[]) new Object[this.capacity/2];
+
+        for(int i = 0;i < size;i++){
+            tmp[i] = data[i];
+        }
+        data = tmp;
+    }
+
+    //Fuegt das Element e am Beginn des Speichers hinzu.
+    public void addFirst(T e){
+        if(size == capacity){
+            increase();
+        }
+
+        //Alle Elemente um einen Index nach rechts verschieben.
+        for(int i = 0;i < size;i++){
+            data[i+1] = data[i];
+        }
+        data[0] = e;
+    }
+
+    //Fuegt das Element e am Ende des Speichers hinzu.
+    public void addLast(T e){
+        if(size == capacity){
+            capacity_verdoppeln();
+        }
+        data[size++] = e;
+    }
+
+    //Löscht das 1.Element vom Speichert und liefert es zurueck.
+    public T removeFirst()throws NoSuchElementException {
+        if(size == 0){
+            throw new NoSuchElementException();
+        }
+        T returnvalue = data[0];
+
+        for(int i = 0;i < size-1;i++){ // 1 2 3 4  ----> 2 3 4
+            data[i] = data[i+1];
+        }
+
+        if(4 * size <= capacity){
+            decrease();
+        }
+        size--;
+        return returnvalue;
+    }
+
+    //Löscht das letzte Element vom Speicher und liefert es zurueck.
+    public T removeLast()throws NoSuchElementException{
+        if(size == 0){
+            throw new NoSuchElementException();
+        }
+        T returnvalue = data[--size];
+
+        if(4 * size <= capacity){
+            decrease();
+        }
+        return returnvalue;
+    }
 
 
 
