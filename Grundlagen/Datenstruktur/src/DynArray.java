@@ -23,7 +23,7 @@ public class DynArray<T>{
 
     //Liefert einen Wert von belegten Positionen.
     public T get(int pos)throws IndexOutOfBoundsException{
-        if(pos < 0 || pos > this.size){
+        if(pos < 0 || pos > this.size-1){
             throw new IndexOutOfBoundsException();
         }
         return data[pos];

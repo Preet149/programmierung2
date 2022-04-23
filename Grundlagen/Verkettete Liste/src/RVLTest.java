@@ -52,7 +52,7 @@ import static org.junit.jupiter.api.Assertions.*;
         assertEquals(7,list.remove(),"The correct number was not returned!!");
 
         for(int i = 0; i < 10; i++){
-            //assertEquals(i,list.remove(),"The correct number was not returned!!");
+            assertEquals(i,list.remove(),"The correct number was not returned!!");
         }
 
     }
