@@ -33,14 +33,13 @@ public class RVL<T> {
             entry = newelem;
         }
         else if(this.size == 1){
-            entry.prev = newelem;
-            newelem = newelem.prev = entry;
-            entry.next = newelem;
+            entry.prev = entry.next = newelem;
+            newelem.next = newelem.prev = entry;
         }
         else{//size>1
-            entry.prev = newelem;
             newelem.next = entry;
             newelem.prev = entry.prev;
+            entry.prev.next = newelem;
             entry.prev = newelem;
         }
     }
