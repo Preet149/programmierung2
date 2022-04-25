@@ -2,6 +2,7 @@ public class Ringpuffer<T>{
     private int size;
     private int capacity;
     T[]data;
+    private int pointer = 0;
 
     public Ringpuffer(int capacity){
         this.capacity = capacity;
@@ -29,6 +30,32 @@ public class Ringpuffer<T>{
         T value = data[pos];
         data[pos] = e;
         return value;
+    }
+
+    //Fuegt das Element e vorne im Speicher ein.
+    public void addFirst(T e){
+        data[0] = e;
+    }
+
+    //Fuegt das Element e am Ende des Speichers hinzu.
+    public void addLast(T e){
+        if(pointer == data.length - 1){
+            size = pointer % data.length;
+        }
+        data[size++] = e;
+    }
+
+    public T removeFirst(){
+        T value = data[pointer];
+        if(pointer == data.length - 1){
+            pointer = pointer % data.length;
+        }
+        data[pointer++] = null;
+        return value;
+    }
+
+    public T removeLast(){
+        return null;
     }
 
 }
